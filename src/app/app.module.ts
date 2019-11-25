@@ -5,12 +5,14 @@ import { HttpClientModule } from "@angular/common/http";
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { DomSeguroPipe } from './pipes/dom-seguro.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    NavbarComponent
+    NavbarComponent,
+    DomSeguroPipe
   ],
   imports: [
     BrowserModule,

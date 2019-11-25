@@ -27,4 +27,9 @@ export class HomeComponent implements OnInit {
     $('#exampleModal').modal();
   }
 
+  cerrarModal(video:any){
+    this.videoSel = null;
+    $('#exampleModal').modal('hide');
+  }
+
 }
