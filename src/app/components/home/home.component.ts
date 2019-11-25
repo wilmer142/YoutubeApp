@@ -32,4 +32,11 @@ export class HomeComponent implements OnInit {
     $('#exampleModal').modal('hide');
   }
 
+  cargarMas(){
+    this.youtubeService.getVideos()
+    .subscribe( videos => {
+      this.videos.push.apply( this.videos, videos);
+    });
+  }
+
 }

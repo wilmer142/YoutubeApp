@@ -14,9 +14,11 @@ export class YoutubeService {
   constructor(public httpClient: HttpClient) { }
 
   getVideos() {
-    const url = `${this.youtubeUrl}/playlistItems?part=snippet&maxResults=10&playlistId=${this.playListId}&key=${this.apiKey}`;
-    // const url = `${this.youtubeUrl}/playlistItems`;
+    let url = `${this.youtubeUrl}/playlistItems?part=snippet&maxResults=10&playlistId=${this.playListId}&key=${this.apiKey}`;
 
+    if (this.nextPageToken) {
+      url = url + `&pageToken=${ this.nextPageToken }`;
+    }
     const params = new HttpParams();
     params.set('part', 'snippet');
     params.set('maxResults', '10');
